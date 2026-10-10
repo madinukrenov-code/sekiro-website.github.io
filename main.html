@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sekiro: Shadows Die Twice</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800;900&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<script src="script.js" defer>
+    
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(
+        ".story, .features, .overview, .sections, .intro"
+    );
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.1
+        }
+    );
+
+    sections.forEach((section) => {
+        section.classList.add("reveal");
+        observer.observe(section);
+    });
+});
+
+</script>
+
+<body>
+    
+
+    <!-- Навигация -->
+
+    <header class="header">
+
+        <a href="main.html" class="logo">
+            <span>隻狼</span> SEKIRO
+        </a>
+
+        <nav class="navigation">
+            <a href="main.html" class="active">Главная</a>
+            <a href="about game.html">Об игре</a>
+            <a href="bosses.html">Боссы</a>
+            <a href="Gameplay.html">Геймплей</a>
+            <a href="locations.html">Локации</a>
+            <a href="gallery.html">Галерея</a>
+            <a href="about project.html">О проекте</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- Главный экран -->
+
+        <section class="hero">
+
+            <div class="hero-background"></div>
+            <div class="hero-overlay"></div>
+
+            <!-- Анимированные искры -->
+
+            <div class="particles" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="hero-content">
+
+                <p class="hero-subtitle">
+                    FROM SOFTWARE PRESENTS
+                </p>
+
+                <h1>SEKIRO</h1>
+
+                <h2>SHADOWS DIE TWICE</h2>
+
+                <div class="red-line"></div>
+
+                <p class="hero-description">
+                    В мире, где честь оплачивается кровью,
+                    а смерть — лишь начало пути,
+                    один синоби должен исполнить свой долг.
+                    Исследуйте земли Асина, овладейте искусством
+                    меча и раскройте тайны бессмертия.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#sections" class="btn btn-primary">
+                        ИССЛЕДОВАТЬ
+                        <span>→</span>
+                    </a>
+
+                    <a href="about game.html" class="btn btn-secondary">
+                        ОБ ИГРЕ
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="japanese-text" aria-hidden="true">
+                隻狼 影は二度死ぬ
+            </div>
+
+            <a href="#sections" class="scroll-down">
+                <span>SCROLL TO EXPLORE</span>
+                <span class="scroll-arrow">↓</span>
+            </a>
+
+        </section>
+
+        <!-- Декоративная цитата -->
+
+        <section class="intro">
+
+            <div class="intro-symbol">忍</div>
+
+            <p class="intro-small">
+                THE WAY OF THE SHINOBI
+            </p>
+
+            <h2>
+                Один воин.<br>
+                Одна клятва.<br>
+                <span>Бесконечная борьба.</span>
+            </h2>
+
+            <div class="intro-line"></div>
+
+        </section>
+
+        <!-- Разделы сайта -->
+
+        <section class="sections" id="sections">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    DISCOVER ASHINA
+                </p>
+
+                <h2>ИССЛЕДУЙ МИР SEKIRO</h2>
+
+                <p>
+                    Выбери свой путь и раскрой тайны
+                    древней Японии.
+                </p>
+
+            </div>
+
+            <div class="cards">
+
+                <a href="about game.html" class="card">
+
+                    <span class="card-number">01</span>
+
+                    <div class="card-icon">狼</div>
+
+                    <h3>ОБ ИГРЕ</h3>
+
+                    <p>
+                        История однорукого синоби,
+                        сюжет и создание игры.
+                    </p>
+
+                    <span class="card-arrow">↗</span>
+
+                </a>
+
+                <a href="bosses.html" class="card">
+
+                    <span class="card-number">02</span>
+
+                    <div class="card-icon">鬼</div>
+
+                    <h3>БОССЫ</h3>
+
+                    <p>
+                        Самые опасные противники,
+                        легендарные битвы и испытания.
+                    </p>
+
+                    <span class="card-arrow">↗</span>
+
+                </a>
+
+                <a href="Gameplay.html" class="card">
+
+                    <span class="card-number">03</span>
+
+                    <div class="card-icon">刀</div>
+
+                    <h3>ГЕЙМПЛЕЙ</h3>
+
+                    <p>
+                        Мастерство меча, парирование,
+                        скрытность и протез синоби.
+                    </p>
+
+                    <span class="card-arrow">↗</span>
+
+                </a>
+
+                <a href="locations.html" class="card">
+
+                    <span class="card-number">04</span>
+
+                    <div class="card-icon">城</div>
+
+                    <h3>ЛОКАЦИИ</h3>
+
+                    <p>
+                        Замок Асина, древние храмы,
+                        опасные долины и скрытые земли.
+                    </p>
+
+                    <span class="card-arrow">↗</span>
+
+                </a>
+
+                <a href="gallery.html" class="card">
+
+                    <span class="card-number">05</span>
+
+                    <div class="card-icon">景</div>
+
+                    <h3>ГАЛЕРЕЯ</h3>
+
+                    <p>
+                        Атмосферные изображения,
+                        красивые пейзажи и арты игры.
+                    </p>
+
+                    <span class="card-arrow">↗</span>
+
+                </a>
+
+                <a href="about project.html" class="card">
+
+                    <span class="card-number">06</span>
+
+                    <div class="card-icon">書</div>
+
+                    <h3>О ПРОЕКТЕ</h3>
+
+                    <p>
+                        Информация о создании сайта,
+                        авторах и идее проекта.
+                    </p>
+
+                    <span class="card-arrow">↗</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Финальная цитата -->
+
+        <section class="final-quote">
+
+            <div class="quote-symbol">死</div>
+
+            <p class="quote-label">
+                THE WORDS OF ISSHIN ASHINA
+            </p>
+
+            <h2>HESITATION IS DEFEAT</h2>
+
+            <p class="translation">
+                «Промедление — поражение»
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+
+    <footer>
+
+        <h3>隻狼 SEKIRO</h3>
+
+        <p>SHADOWS DIE TWICE</p>
+
+        <div class="footer-line"></div>
+
+        <p>Фанатский учебный проект · 2026</p>
+
+        <p>© FromSoftware / Activision</p>
+
+    </footer>
+    <footer>
+    <p>Сайт разработан Нуркеновым Мади и Деркач Константином</p>
+    <p>© 2026. Все права на оригинальный код и дизайн защищены.</p>
+    <p>Sekiro: Shadows Die Twice — FromSoftware.</p>
+</footer>
+
+</body>
+</html>
+

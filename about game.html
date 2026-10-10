@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Путь синоби | Sekiro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Manrope:wght@400;500;600;700;800&family=Russo+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="about game.css">
+</head>
+<script src="script.js" defer>
+    
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(
+        ".story, .features, .overview, .sections, .intro"
+    );
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.1
+        }
+    );
+
+    sections.forEach((section) => {
+        section.classList.add("reveal");
+        observer.observe(section);
+    });
+});
+
+</script>
+<body>
+
+    <header class="header">
+        <a href="main.html" class="logo">
+            <span>隻狼</span> SEKIRO
+        </a>
+
+        <nav class="navigation">
+            <a href="main.html">Главная</a>
+            <a href="about game.html" class="active">Об игре</a>
+            <a href="bosses.html">Боссы</a>
+            <a href="Gameplay.html">Геймплей</a>
+            <a href="locations.html">Локации</a>
+            <a href="galery.html">Галерея</a>
+            <a href="about project.html">О проекте</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ГЛАВНЫЙ ЭКРАН -->
+        <section class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-shade"></div>
+
+            <div class="hero-content">
+                <p class="eyebrow">隻狼 — THE WAY OF THE SHINOBI</p>
+
+                <h1>ПУТЬ<br><span>СИНОБИ</span></h1>
+
+                <div class="accent-line"></div>
+
+                <p class="hero-description">
+                    В эпоху бесконечных войн один воин
+                    должен защитить своего господина.
+                    Познай историю Волка, тайну бессмертия
+                    и судьбу великого клана Асина.
+                </p>
+
+                <a href="#story" class="button">
+                    ОТКРЫТЬ ИСТОРИЮ <span>↗</span>
+                </a>
+            </div>
+
+            <div class="side-symbol" aria-hidden="true">
+                忍者
+            </div>
+
+            <a href="#overview" class="scroll-hint">
+                ЛИСТАЙ ВНИЗ ↓
+            </a>
+        </section>
+
+        <!-- ИНФОРМАЦИЯ ОБ ИГРЕ -->
+        <section class="overview" id="overview">
+            <div class="section-title">
+                <span>01 / GAME OVERVIEW</span>
+                <h2>ЛЕГЕНДА О СЕКИРО</h2>
+                <p>
+                    Приключение, в котором каждое
+                    сражение проверяет твою решимость.
+                </p>
+            </div>
+
+            <div class="facts">
+                <div class="fact">
+                    <small>РАЗРАБОТЧИК</small>
+                    <strong>FromSoftware</strong>
+                </div>
+
+                <div class="fact">
+                    <small>ДАТА ВЫХОДА</small>
+                    <strong>22.03.2019</strong>
+                </div>
+
+                <div class="fact">
+                    <small>ЖАНР</small>
+                    <strong>Action-Adventure</strong>
+                </div>
+
+                <div class="fact">
+                    <small>ИЗДАТЕЛЬ</small>
+                    <strong>Activision</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- ИСТОРИЯ ВОЛКА -->
+        <section class="story" id="story">
+            <div class="story-picture">
+                <img src="0SEo_3GHxFz9VpICO7ajZSJ4YvAkoZBTZSC9G6WxKFXzRO3VpqL1Jgs6g5U9yt4nFkMP__WnHEX8-eqo1CM2c9nZI9w1JRzidrVA1qlEM8AVK3xkD9ctrjw4ESKVe8njkmIC8iOFNo8OXxlqQfOIdlSjM0pNkq1rIKy6wjSGpxicXEdx-Bnj8gdre5IkE.jpg"
+                     alt="Волк — главный герой Sekiro"
+                     loading="lazy">
+                <span class="picture-label">THE ONE-ARMED WOLF</span>
+            </div>
+
+            <div class="story-text">
+                <span class="eyebrow">02 / THE STORY</span>
+
+                <h2>ИСТОРИЯ<br><span>ВОЛКА</span></h2>
+
+                <div class="accent-line"></div>
+
+                <p>
+                    Действие Sekiro: Shadows Die Twice
+                    происходит в вымышленной версии
+                    Японии эпохи Сэнгоку.
+                </p>
+
+                <p>
+                    Главный герой — синоби по прозвищу
+                    Волк. Он поклялся защищать юного Куро,
+                    известного как Божественный наследник.
+                </p>
+
+                <p>
+                    После потери руки Волк получает
+                    необычный протез и отправляется
+                    спасать своего господина.
+                    На его пути стоят могущественные
+                    воины и сверхъестественные существа.
+                </p>
+
+                <div class="story-signature">
+                    狼 <span>ONE-ARMED WOLF</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ОСОБЕННОСТИ -->
+        <section class="features">
+            <div class="section-title">
+                <span>03 / THE SHINOBI EXPERIENCE</span>
+                <h2>ИСКУССТВО СИНОБИ</h2>
+                <p>
+                    Три главные составляющие
+                    легендарного приключения.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-picture">
+                        <img src="Bb3FaN_Hgt01H97Vl1Pi5OV_Ck1o1YOJ-YJ1HEvK1RDCX8iKD6nRzwwF9hHQkYRWNwivFyLcsUqSZyQ1SgUmGA8MMiTHcrfiOj3aFbdQy7GNF4T_VT0kGyUESxbf5NeHK07XaWNhT83j7pkyTgiuBlppBn2URdw9Ab2kOAFzogjcwPAL_n60aCwFq43-R.jpg"
+                             alt="Сражение на мечах"
+                             loading="lazy">
+                    </div>
+                    <div class="feature-info">
+                        <span>01 / 刀</span>
+                        <h3>ИСКУССТВО БОЯ</h3>
+                        <p>
+                            Точные парирования,
+                            разрушение концентрации
+                            противника и смертельные удары.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-picture">
+                        <img src="eWaHtNbD0ZHawminws6oUvT9ShVPV4U7-sXIZ0alyuZVLfmHXyEHx3wm7J9TzIKV71vJIWAS7ReNQl-074NNWO8ff3_Qo5bQxRAbGsf6Gq3I377f3IlOCokpgqsEeJU_7iflrq7_VEE43o51BtUd1jfFiKtGWciELhYqchoSMOmk4AXc6rrPckhAAsgGi.jpg"
+                             alt="Скрытность синоби"
+                             loading="lazy">
+                    </div>
+                    <div class="feature-info">
+                        <span>02 / 忍</span>
+                        <h3>СКРЫТНОСТЬ</h3>
+                        <p>
+                            Незаметное передвижение,
+                            использование окружения
+                            и внезапные атаки.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-picture">
+                        <img src="KqCAwXw7d3ePdH00NtzqauKZLFM37snOTRnkr2qdijnBq1qd5n0i67pgawDpaHNKHw02QZRxg1vPUoaPu-Kc0Gu22iksMPlKQo_aq0wF_GHVlKpuHG05_70qrqHhzNFvwiP3skWPZgeZhMSSf2wEbZMrXlkz66yTRU3R91iYV1yqe2U7nmRFhfo9FS26g.jpg"
+                             alt="Протез синоби"
+                             loading="lazy">
+                    </div>
+                    <div class="feature-info">
+                        <span>03 / 義</span>
+                        <h3>ПРОТЕЗ СИНОБИ</h3>
+                        <p>
+                            Сюрикены, топор, огнемёт
+                            и другие инструменты
+                            для изменения тактики боя.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ФИНАЛЬНАЯ ЦИТАТА -->
+        <section class="quote">
+            <div class="quote-mark">狼</div>
+
+            <span>THE WAY OF THE WOLF</span>
+
+            <h2>ОДНА КЛЯТВА.<br>ОДНА СУДЬБА.</h2>
+
+            <p>Путь синоби продолжается.</p>
+
+            <a href="main.html" class="return-button">
+                ← НА ГЛАВНУЮ
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-logo">隻狼 SEKIRO</div>
+        <p>SHADOWS DIE TWICE</p>
+        <p>Фанатский учебный проект · 2026</p>
+    </footer>
+
+</body>
+</html>

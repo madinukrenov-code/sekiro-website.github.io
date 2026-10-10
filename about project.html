@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>О проекте | Sekiro</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Manrope:wght@400;500;600;700;800&family=Russo+One&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="about project.css">
+    <script src="aboutproject.js" defer>
+        
+document.addEventListener("DOMContentLoaded", () => {
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    // ПОЯВЛЕНИЕ БЛОКОВ
+
+    const elements = document.querySelectorAll(".reveal");
+
+    if (!reducedMotion && "IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+
+                });
+            },
+            { threshold: 0.08 }
+        );
+
+        document.body.classList.add("js-enabled");
+
+        elements.forEach((element) => {
+            observer.observe(element);
+        });
+    }
+
+    // ПРОГРЕСС ПРОКРУТКИ
+
+    const progress = document.getElementById("progress");
+    const backToTop = document.getElementById("backToTop");
+
+    function updateScroll() {
+
+        const maxScroll =
+            document.documentElement.scrollHeight -
+            window.innerHeight;
+
+        const percent = maxScroll > 0
+            ? (window.scrollY / maxScroll) * 100
+            : 0;
+
+        progress.style.width = percent + "%";
+
+        if (window.scrollY > 450) {
+            backToTop.classList.add("show");
+        } else {
+            backToTop.classList.remove("show");
+        }
+    }
+
+    window.addEventListener("scroll", updateScroll, {
+        passive: true
+    });
+
+    updateScroll();
+
+    // КНОПКА НАВЕРХ
+
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: reducedMotion ? "instant" : "smooth"
+        });
+    });
+
+});
+
+    </script>
+</head>
+
+<body>
+
+    <div class="progress-bar" id="progress"></div>
+
+    <!-- МЕНЮ -->
+    <header class="header">
+
+        <a href="main.html" class="logo">
+            <span>隻狼</span> SEKIRO
+        </a>
+
+        <nav class="navigation">
+            <a href="main.html">Главная</a>
+            <a href="about game.html">Об игре</a>
+            <a href="bosses.html">Боссы</a>
+            <a href="Gameplay.html">Геймплей</a>
+            <a href="locations.html">Локации</a>
+            <a href="gallery.html">Галерея</a>
+            <a href="about project.html" class="active">
+                О проекте
+            </a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- ГЛАВНЫЙ ЭКРАН -->
+        <section class="hero">
+
+            <div class="hero-image"></div>
+            <div class="hero-shade"></div>
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    SEKIRO / PROJECT ARCHIVES / 2026
+                </p>
+
+                <h1>
+                    О <span>ПРОЕКТЕ</span>
+                </h1>
+
+                <div class="gold-line"></div>
+
+                <p class="hero-description">
+                    Этот сайт — путешествие в мир
+                    Sekiro: Shadows Die Twice.
+
+                    Проект объединяет историю игры,
+                    легендарных боссов, уникальную
+                    боевую систему и атмосферные
+                    локации феодальной Японии.
+                </p>
+
+                <a href="#about" class="button">
+                    ИССЛЕДОВАТЬ ПРОЕКТ
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+            <div class="hero-kanji" aria-hidden="true">
+                忍
+            </div>
+
+            <a href="#about" class="scroll-hint">
+                SCROLL TO DISCOVER ↓
+            </a>
+
+        </section>
+
+        <!-- ОПИСАНИЕ ПРОЕКТА -->
+        <section class="about section" id="about">
+
+            <div class="about-content reveal">
+
+                <p class="section-label">
+                    01 / INTRODUCTION
+                </p>
+
+                <h2>
+                    БОЛЬШЕ, ЧЕМ
+                    <span>ПРОСТО САЙТ</span>
+                </h2>
+
+                <div class="gold-line"></div>
+
+                <p>
+                    Sekiro: Shadows Die Twice —
+                    игра, созданная студией FromSoftware,
+                    действие которой разворачивается
+                    в вымышленной Японии эпохи Сэнгоку.
+                </p>
+
+                <p>
+                    Цель этого учебного проекта —
+                    познакомить посетителей
+                    с миром Sekiro и представить
+                    информацию об игре в современном,
+                    удобном и атмосферном формате.
+                </p>
+
+                <p>
+                    Для оформления использованы
+                    тёмные оттенки, японские мотивы,
+                    изображения игры и плавные
+                    визуальные эффекты.
+                </p>
+
+            </div>
+
+            <div class="about-image reveal">
+
+                <img src="3nvMCGWxKRU60vrDcyDRXHWjKxnTADdkh8UFx1ir8BN9fH9cw0NqqRQdUp3y7dvasMvtKDgwbzQkAac-rBDYsKDvD1zwt1lUcE_rGw_-NI5phr87d4bJuQYFCgMdgfYqlVrQ969OzYoAvxo1lpvvC578MWJ8Gi4yTxoO9CLO6DF0pSqHBE-o2jtr3ewvO.jpg"
+                     alt="Волк из Sekiro"
+                     loading="lazy">
+
+                <div class="image-caption">
+                    THE WAY OF THE SHINOBI
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ЦЕЛИ ПРОЕКТА -->
+        <section class="goals section">
+
+            <div class="section-heading reveal">
+
+                <p class="section-label">
+                    02 / OUR MISSION
+                </p>
+
+                <h2>ЦЕЛИ ПРОЕКТА</h2>
+
+                <p>
+                    Основные задачи, которые
+                    решает этот сайт.
+                </p>
+
+            </div>
+
+            <div class="goal-grid">
+
+                <article class="goal-card reveal">
+                    <span class="goal-number">01</span>
+                    <div class="goal-icon">知</div>
+                    <h3>ИНФОРМАЦИЯ</h3>
+                    <p>
+                        Рассказать об истории,
+                        персонажах, боссах
+                        и особенностях Sekiro.
+                    </p>
+                </article>
+
+                <article class="goal-card reveal">
+                    <span class="goal-number">02</span>
+                    <div class="goal-icon">美</div>
+                    <h3>АТМОСФЕРА</h3>
+                    <p>
+                        Передать настроение игры
+                        через изображения, цвета,
+                        типографику и анимации.
+                    </p>
+                </article>
+
+                <article class="goal-card reveal">
+                    <span class="goal-number">03</span>
+                    <div class="goal-icon">技</div>
+                    <h3>РАЗРАБОТКА</h3>
+                    <p>
+                        Применить HTML, CSS
+                        и JavaScript для создания
+                        интерактивного веб-сайта.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ТЕХНОЛОГИИ -->
+        <section class="technology section">
+
+            <div class="section-heading reveal">
+                <p class="section-label">
+                    03 / TECHNOLOGIES
+                </p>
+
+                <h2>ТЕХНОЛОГИИ</h2>
+
+                <p>
+                    Инструменты, используемые
+                    для создания сайта.
+                </p>
+            </div>
+
+            <div class="tech-grid">
+
+                <div class="tech-card reveal">
+                    <span class="tech-index">01 /</span>
+                    <h3>HTML</h3>
+                    <p>
+                        Структура страниц,
+                        меню и содержимое.
+                    </p>
+                    <div class="tech-line"></div>
+                </div>
+
+                <div class="tech-card reveal">
+                    <span class="tech-index">02 /</span>
+                    <h3>CSS</h3>
+                    <p>
+                        Цвета, изображения,
+                        адаптация и дизайн.
+                    </p>
+                    <div class="tech-line"></div>
+                </div>
+
+                <div class="tech-card reveal">
+                    <span class="tech-index">03 /</span>
+                    <h3>JAVASCRIPT</h3>
+                    <p>
+                        Интерактивные эффекты
+                        и поведение страниц.
+                    </p>
+                    <div class="tech-line"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- РАЗДЕЛЫ САЙТА -->
+        <section class="explore section">
+
+            <div class="section-heading reveal">
+                <p class="section-label">
+                    04 / EXPLORE THE WEBSITE
+                </p>
+
+                <h2>ИССЛЕДУЙ МИР SEKIRO</h2>
+
+                <p>
+                    Перейди в любой раздел сайта.
+                </p>
+            </div>
+
+            <div class="explore-grid">
+
+                <a href="about game.html"
+                   class="explore-card reveal">
+                    <span>01 / 狼</span>
+                    <h3>Об игре</h3>
+                    <span class="explore-arrow">↗</span>
+                </a>
+
+                <a href="bosses.html"
+                   class="explore-card reveal">
+                    <span>02 / 鬼</span>
+                    <h3>Боссы</h3>
+                    <span class="explore-arrow">↗</span>
+                </a>
+
+                <a href="Gameplay.html"
+                   class="explore-card reveal">
+                    <span>03 / 刀</span>
+                    <h3>Геймплей</h3>
+                    <span class="explore-arrow">↗</span>
+                </a>
+
+                <a href="locations.html"
+                   class="explore-card reveal">
+                    <span>04 / 城</span>
+                    <h3>Локации</h3>
+                    <span class="explore-arrow">↗</span>
+                </a>
+
+                <a href="gallery.html"
+                   class="explore-card reveal">
+                    <span>05 / 景</span>
+                    <h3>Галерея</h3>
+                    <span class="explore-arrow">↗</span>
+                </a>
+
+                <a href="main.html"
+                   class="explore-card reveal">
+                    <span>06 / 忍</span>
+                    <h3>Главная</h3>
+                    <span class="explore-arrow">↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ЗАВЕРШЕНИЕ -->
+        <section class="ending">
+
+            <div class="ending-symbol">隻狼</div>
+
+            <p class="section-label">
+                THE JOURNEY CONTINUES
+            </p>
+
+            <h2>
+                КАЖДАЯ ЛЕГЕНДА
+                <span>ИМЕЕТ СВОЁ НАЧАЛО</span>
+            </h2>
+
+            <p>
+                Открой для себя мир синоби.
+            </p>
+
+            <a href="main.html" class="button">
+                ВЕРНУТЬСЯ НА ГЛАВНУЮ ↗
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-logo">
+            隻狼 SEKIRO
+        </div>
+
+        <p>SHADOWS DIE TWICE</p>
+
+        <div class="footer-divider"></div>
+
+        <p>Фанатский учебный проект · 2026</p>
+
+        <p>
+            Игра принадлежит FromSoftware
+            и соответствующим правообладателям.
+        </p>
+
+    </footer>
+
+    <button class="back-to-top"
+            id="backToTop"
+            aria-label="Наверх">
+        ↑
+    </button>
+
+</body>
+</html>
